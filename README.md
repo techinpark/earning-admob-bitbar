@@ -1,4 +1,4 @@
-# earning-admob-bitbar
+# earning-admob-bitbar 💰
 💰 show directly your earning of admobs for month. 
 
 ![](./.github/images/image01.png)

@@ -15,6 +15,7 @@ import pickle
 from google_auth_oauthlib.flow import Flow
 from googleapiclient.discovery import build
 from google.auth.transport.requests import Request
+from datetime import datetime
 
 API_NAME = 'admob'
 API_VERSION = 'v1'
@@ -151,7 +152,10 @@ def generate_network_report(service, publisher_id):
           agg[record["row"]["dimensionValues"]["MONTH"]["value"]] = 0
       agg[record["row"]["dimensionValues"]["MONTH"]["value"]] += int(record["row"]["metricValues"]["ESTIMATED_EARNINGS"]["microsValue"])/1000000
 
-  value = agg['202010']
+
+  month = datetime.today().strftime('%Y%m')
+  value = agg[month]
+
   print(f"💰 ${value:,.2f}")
   
 
